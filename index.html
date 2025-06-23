@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <!-- Animated Gradient Background -->
+  <div class="wave-background"></div>
+
+  <div class="container">
+    <h1>Gradient Quiz</h1>
+
+    <div id="setupSection">
+      <input type="text" id="userName" placeholder="Enter your name" />
+      <input type="file" id="pdfFile" accept="application/pdf" />
+      <button onclick="handleUpload()">Start Quiz</button>
+    </div>
+
+    <div id="quizSection" style="display: none;">
+      <div class="quiz-header">
+        <p><strong>Name:</strong> <span id="displayName"></span></p>
+        <p><strong>Time:</strong> <span id="timer">00:00</span></p>
+      </div>
+      <div id="quizContainer" class="fade-slide"></div>
+      <div class="quiz-controls">
+        <button onclick="prevQuestion()">Previous</button>
+        <button onclick="nextQuestion()">Next</button>
+      </div>
+    </div>
+
+    <div id="resultSection" style="display: none;">
+      <h2>🎉 Quiz Completed!</h2>
+      <p id="finalScore"></p>
+      <canvas id="confetti-canvas"></canvas>
+      <div style="width: 200px; margin: 20px auto;">
+        <canvas id="pieChart"></canvas>
+      </div>
+      <div id="summaryContainer"></div>
+      <button onclick="location.reload()">Restart</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
